@@ -55,7 +55,6 @@ function CheckoutForm({ amount, onSuccess, onError }: StripeCheckoutProps) {
         <PaymentElement
           options={{
             layout: 'tabs',
-            paymentMethodTypes: ['card'],
           }}
         />
       </div>

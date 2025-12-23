@@ -77,7 +77,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         const newItem: CartItem = {
           ...item,
           id: `${itemKey}-${Date.now()}`,
-        };
+        } as CartItem;
         return [...prevItems, newItem];
       }
     });

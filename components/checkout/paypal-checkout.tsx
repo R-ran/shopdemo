@@ -105,9 +105,9 @@ export function PayPalCheckout({ amount, onSuccess, onError }: PayPalCheckoutPro
       <PayPalButtons
         createOrder={createOrder}
         onApprove={onApprove}
-        onError={(err) => {
+        onError={(err: any) => {
           console.error('PayPal error:', err);
-          onError(err.message || 'PayPal payment error');
+          onError(err?.message || 'PayPal payment error');
         }}
         onCancel={(data) => {
           console.log('PayPal payment cancelled:', data);

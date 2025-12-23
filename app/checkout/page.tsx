@@ -174,12 +174,12 @@ export default function CheckoutPage() {
         </DialogContent>
       </Dialog>
 
-      <div className="min-h-screen bg-gray-50 py-8">
+      <div className="min-h-screen bg-gray-50 py-4 md:py-8">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-3xl font-bold text-gray-900 mb-8">Checkout</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">Checkout</h1>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
             {/* 左侧：订单详情 */}
             <div className="lg:col-span-2 space-y-6">
               {/* 配送信息 */}
@@ -192,7 +192,7 @@ export default function CheckoutPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <Label htmlFor="firstName">First Name *</Label>
                         <Input
@@ -201,6 +201,7 @@ export default function CheckoutPage() {
                           required
                           value={formData.firstName}
                           onChange={handleInputChange}
+                          className="w-full"
                         />
                       </div>
                       <div>
@@ -211,6 +212,7 @@ export default function CheckoutPage() {
                           required
                           value={formData.lastName}
                           onChange={handleInputChange}
+                          className="w-full"
                         />
                       </div>
                     </div>
@@ -250,7 +252,7 @@ export default function CheckoutPage() {
                       />
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                       <div>
                         <Label htmlFor="city">City *</Label>
                         <Input
@@ -259,6 +261,7 @@ export default function CheckoutPage() {
                           required
                           value={formData.city}
                           onChange={handleInputChange}
+                          className="w-full"
                         />
                       </div>
                       <div>
@@ -269,9 +272,10 @@ export default function CheckoutPage() {
                           required
                           value={formData.state}
                           onChange={handleInputChange}
+                          className="w-full"
                         />
                       </div>
-                      <div>
+                      <div className="sm:col-span-2 md:col-span-1">
                         <Label htmlFor="zipCode">ZIP Code *</Label>
                         <Input
                           id="zipCode"
@@ -279,6 +283,7 @@ export default function CheckoutPage() {
                           required
                           value={formData.zipCode}
                           onChange={handleInputChange}
+                          className="w-full"
                         />
                       </div>
                     </div>
@@ -367,8 +372,8 @@ export default function CheckoutPage() {
             </div>
 
             {/* 右侧：订单摘要 */}
-            <div className="lg:col-span-1">
-              <Card className="sticky top-8">
+            <div className="lg:col-span-1 order-first lg:order-last">
+              <Card className="sticky top-4 lg:top-8">
                 <CardHeader>
                   <CardTitle>Order Summary</CardTitle>
                 </CardHeader>
@@ -376,14 +381,14 @@ export default function CheckoutPage() {
                   {/* 商品列表 */}
                   <div className="space-y-3 max-h-64 overflow-y-auto">
                     {items.map((item) => (
-                      <div key={item.id} className="flex gap-3">
+                      <div key={item.id} className="flex gap-2 md:gap-3">
                         <img
                           src={item.image}
                           alt={item.name}
-                          className="w-16 h-16 rounded object-cover"
+                          className="w-12 h-12 md:w-16 md:h-16 rounded object-cover flex-shrink-0"
                         />
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm font-medium text-gray-900 line-clamp-2">
+                          <p className="text-xs md:text-sm font-medium text-gray-900 line-clamp-2">
                             {item.name}
                           </p>
                           {item.selectedPackage && (

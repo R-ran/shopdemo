@@ -59,12 +59,12 @@ export function Footer() {
 
   return (
     <footer className="bg-[#00a6ff] text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      <div className="container mx-auto px-4 py-8 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
           {/* 左侧：Quick links */}
-          <div className="flex flex-col text-3xl items-center">
-            <h4 className="font-semibold mb-4 text-white">Quick links</h4>
-            <ul className="text-base space-y-2">
+          <div className="flex flex-col text-xl md:text-3xl items-center">
+            <h4 className="font-semibold mb-4 text-white text-center">Quick links</h4>
+            <ul className="text-sm md:text-base space-y-2 text-center md:text-left">
               <li>
                 <Link href="/about" className="hover:underline transition-colors">
                   About Us
@@ -109,14 +109,14 @@ export function Footer() {
           </div>
 
           {/* 右侧：Subscribe to our emails */}
-          <div>
-            <h4 className="font-semibold mb-4 text-white text-3xl">Subscribe to our emails</h4>
-            <p className="text-sm opacity-90 mb-4">
+          <div className="text-center md:text-left">
+            <h4 className="font-semibold mb-4 text-white text-xl md:text-3xl">Subscribe to our emails</h4>
+            <p className="text-xs md:text-sm opacity-90 mb-4">
               Stay updated on exclusive offers and latest arrivals - subscribe to our newsletter
               now for special discounts and insider deals!
             </p>
 
-            <form onSubmit={handleSubscribe} className="max-w-sm">
+            <form onSubmit={handleSubscribe} className="max-w-sm mx-auto md:mx-0">
               <input
                 aria-label="Email"
                 type="email"
@@ -139,10 +139,10 @@ export function Footer() {
         </div>
 
         {/* 底部：版权信息和支付方式 */}
-        <div className="border-t border-blue-300 pt-8 mt-8">
+        <div className="border-t border-blue-300 pt-6 md:pt-8 mt-6 md:mt-8">
           <div className="flex flex-col items-center gap-4">
             {/* 支付方式图标 */}
-            <div className="flex items-center gap-3 justify-center">
+            <div className="flex flex-wrap items-center gap-2 md:gap-3 justify-center">
               {/* Visa */}
               <div className="bg-white rounded px-4 py-2.5 flex items-center justify-center">
                 <img 

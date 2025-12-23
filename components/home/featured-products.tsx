@@ -27,9 +27,9 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
   }
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-12 md:py-16 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center gap-8">
+        <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
           <div className="w-full md:w-1/2">
             <div className="rounded-lg overflow-hidden bg-gray-100">
               <Image
@@ -43,10 +43,10 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
           </div>
 
           <div className="w-full md:w-1/2 text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Transform Your Life: Explore Special Offers for an Enhanced You!
             </h2>
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-base md:text-lg text-gray-600 mb-6">
               Embark on a journey through our curated collection of health, beauty, wellness, and
               innovative gadgets, designed to enhance every aspect of your life. Our online store
               offers an unparalleled shopping experience, with exclusive offers tailored to ignite
@@ -55,7 +55,7 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
             </p>
             <div>
               <Link href="/products">
-                <Button className="inline-flex items-center px-6 py-3">
+                <Button className="inline-flex items-center px-6 py-3 w-full sm:w-auto">
                   Shop Now
                 </Button>
               </Link>

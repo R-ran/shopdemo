@@ -245,21 +245,21 @@ export function Product1Template({ product }: ProductTemplateProps) {
             </div>
             <div className="mt-2 pt-3 "></div>
 
-            <div className="flex items-center gap-5 mb-4">
-              <span className="text-xl text-gray-500 line-through">
+            <div className="flex flex-wrap items-center gap-3 md:gap-5 mb-4">
+              <span className="text-lg md:text-xl text-gray-500 line-through">
                 ${selectedPackageData.comparePrice.toFixed(2)}
               </span>
-              <span className="text-3xl font-bold text-gray-900">
+              <span className="text-2xl md:text-3xl font-bold text-gray-900">
                 ${selectedPackageData.price.toFixed(2)}
               </span>
-              <Badge className="bg-orange-600 hover:bg-orange-700 text-white px-3 py-1 text-sm font-bold">
+              <Badge className="bg-orange-600 hover:bg-orange-700 text-white px-2 md:px-3 py-1 text-xs md:text-sm font-bold">
                 SAVE {Math.round(((selectedPackageData.comparePrice - selectedPackageData.price) / selectedPackageData.comparePrice) * 100)}%
               </Badge>
             </div>
 
             {/* BUY MORE SAVE MORE 模块 */}
             <div className="mb-6">
-              <h3 className="text-center text-xl font-bold text-gray-900 mb-4">
+              <h3 className="text-center text-lg md:text-xl font-bold text-gray-900 mb-4">
                 🔥 BUY MORE SAVE MORE 🔥
               </h3>
               

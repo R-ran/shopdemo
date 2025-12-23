@@ -96,7 +96,7 @@ export function PaymentButtons({
     <div className="space-y-3 mt-4">
       <Button
         onClick={handlePayPalCheckout}
-        className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-6 flex items-center justify-center gap-2"
+        className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-4 md:py-6 flex items-center justify-center gap-2 text-sm md:text-base"
       >
         <span>Pay with</span>
         <div className="flex items-center gap-1">
@@ -107,7 +107,7 @@ export function PaymentButtons({
       <Button
         onClick={handleCardCheckout}
         variant="outline"
-        className="w-full border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-bold uppercase py-6"
+        className="w-full border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-bold uppercase py-4 md:py-6 text-sm md:text-base"
       >
         PAY WITH VISA
       </Button>

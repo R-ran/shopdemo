@@ -1,10 +1,10 @@
 export default function FAQsPage() {
   return (
-    <div className="min-h-screen bg-[#fdfbf7] py-12">
+    <div className="min-h-screen bg-[#fdfbf7] py-6 md:py-12">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* 标题 */}
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-8">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-6 md:mb-8">
             FAQs
           </h1>
 

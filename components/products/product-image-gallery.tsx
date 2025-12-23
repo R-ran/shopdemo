@@ -45,34 +45,37 @@ export function ProductImageGallery({ images, productName }: ProductImageGallery
             <Button
               variant="ghost"
               size="icon"
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
               onClick={handlePrevious}
+              aria-label="Previous image"
             >
-              <ChevronLeft className="h-6 w-6" />
+              <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
             </Button>
             <Button
               variant="ghost"
               size="icon"
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white opacity-0 group-hover:opacity-100 transition-opacity"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
               onClick={handleNext}
+              aria-label="Next image"
             >
-              <ChevronRight className="h-6 w-6" />
+              <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
             </Button>
           </>
         )}
       </div>
 
       {images.length > 1 && (
-        <div className="flex gap-2 overflow-x-auto pb-2">
+        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
           {images.map((image, index) => (
             <button
               key={index}
               onClick={() => setSelectedImage(index)}
-              className={`relative flex-shrink-0 w-20 h-20 bg-white border-2 overflow-hidden transition-all ${
+              className={`relative flex-shrink-0 w-16 h-16 md:w-20 md:h-20 bg-white border-2 overflow-hidden transition-all rounded ${
                 selectedImage === index
                   ? 'border-blue-600'
                   : 'border-gray-200 hover:border-gray-300'
               }`}
+              aria-label={`View image ${index + 1}`}
             >
               <Image
                 src={image}

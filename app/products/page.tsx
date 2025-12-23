@@ -1,6 +1,7 @@
 import { ProductGrid } from '@/components/products/product-grid';
 import { ProductFilters } from '@/components/products/product-filters';
 import { ProductSort } from '@/components/products/product-sort';
+import { MobileFilters } from '@/components/products/mobile-filters';
 import { mockProducts } from '@/lib/mock-data';
 import { EmailSubscribe } from '@/components/email-subscribe';
 
@@ -89,17 +90,21 @@ export default function ProductsPage({ searchParams }: ProductsPageProps) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 md:gap-8">
           <aside className="lg:col-span-1">
             <ProductFilters maxPrice={maxPrice} />
           </aside>
 
           <div className="lg:col-span-3">
-            <div className="flex justify-between items-center mb-6">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
               <div className="text-sm text-gray-600">
                 Showing {products.length} {products.length === 1 ? 'result' : 'results'}
               </div>
-              <ProductSort />
+              <div className="flex items-center gap-3 w-full sm:w-auto">
+                {/* 移动端筛选按钮 */}
+                <MobileFilters maxPrice={maxPrice} />
+                <ProductSort />
+              </div>
             </div>
 
             <ProductGrid products={products} />
@@ -107,17 +112,17 @@ export default function ProductsPage({ searchParams }: ProductsPageProps) {
         </div>
       </div>
 
-      <div className="border-t border-gray-200 mt-6 pt-6 pb-18 mb-16">
+      <div className="border-t border-gray-200 mt-6 pt-6 pb-12 md:pb-18 mb-12 md:mb-16">
         <div className="container mx-auto px-4">
-          <h3 className="text-4xl font-bold text-center mb-4">Subscribe to our emails</h3>
+          <h3 className="text-2xl md:text-4xl font-bold text-center mb-4">Subscribe to our emails</h3>
           <p className="text-sm text-gray-700 text-center max-w-xl mx-auto mb-4">
             Join our email list for exclusive offers and the latest news.
           </p>
 
           <EmailSubscribe
-            className="flex items-center justify-center gap-3"
-            inputClassName="w-64 px-3 py-2 border border-gray-300 rounded-md disabled:opacity-50"
-            buttonClassName="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex flex-col sm:flex-row items-center justify-center gap-3"
+            inputClassName="w-full sm:w-64 px-3 py-2 border border-gray-300 rounded-md disabled:opacity-50"
+            buttonClassName="w-full sm:w-auto bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           />
         </div>
       </div>

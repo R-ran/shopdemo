@@ -61,12 +61,12 @@ export function ContactSection() {
   };
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-12 md:py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
           <Card>
             <CardHeader className="text-center">
-              <CardTitle className="text-3xl font-bold">Contact form</CardTitle>
+              <CardTitle className="text-2xl md:text-3xl font-bold">Contact form</CardTitle>
               <CardDescription>
                 
               </CardDescription>

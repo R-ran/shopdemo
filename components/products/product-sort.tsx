@@ -25,10 +25,10 @@ export function ProductSort() {
   };
 
   return (
-    <div className="flex items-center gap-3">
-      <label className="text-sm font-medium text-gray-700">Sort by:</label>
+    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 w-full sm:w-auto">
+      <label className="text-sm font-medium text-gray-700 whitespace-nowrap">Sort by:</label>
       <Select value={currentSort} onValueChange={handleSortChange}>
-        <SelectTrigger className="w-[200px]">
+        <SelectTrigger className="w-full sm:w-[200px]">
           <SelectValue />
         </SelectTrigger>
         <SelectContent>

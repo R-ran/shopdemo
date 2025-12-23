@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="">
-      <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl md:text-5xl font-bold text-gray-900 mb-4">Contact Us</h1>
+      <div className="container mx-auto px-4 py-6 md:py-12">
+        <div className="text-center mb-8 md:mb-12">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Contact Us</h1>
           
         </div>
 
-        <div className="max-w-3xl mx-auto bg-white rounded-md px-6 py-8 shadow-sm">
+        <div className="max-w-3xl mx-auto bg-white rounded-md px-4 md:px-6 py-6 md:py-8 shadow-sm">
           <h2 className="text-2xl font-bold mb-3">Contact Us</h2>
           <p className="text-sm text-gray-700 mb-4">
             If you have any questions, you may check out our FAQ page first to see if your
@@ -39,16 +39,16 @@ export default function ContactPage() {
           <p className="text-sm text-gray-600">We would be more than happy to answer your questions 😊</p>
 
           <div className="border-t border-gray-200 mt-6 pt-6">
-            <h3 className="text-4xl font-bold text-center mb-4">Subscribe to our emails</h3>
+            <h3 className="text-2xl md:text-4xl font-bold text-center mb-4">Subscribe to our emails</h3>
             <p className="text-sm text-gray-700 text-center max-w-xl mx-auto mb-4">
               Join our email list for exclusive offers and the latest news.
             </p>
 
-            <div className="flex items-center justify-center gap-3">
+            <div className="flex items-center justify-center">
               <EmailSubscribe
-                className="flex items-center justify-center gap-3"
-                inputClassName="w-64 px-3 py-2 border border-gray-300 rounded-md disabled:opacity-50"
-                buttonClassName="bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto"
+                inputClassName="w-full sm:w-64 px-3 py-2 border border-gray-300 rounded-md disabled:opacity-50"
+                buttonClassName="w-full sm:w-auto bg-gray-900 text-white px-4 py-2 rounded-md hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               />
             </div>
           </div>

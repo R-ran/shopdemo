@@ -78,18 +78,18 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
       <SheetContent side="right" className="w-full sm:max-w-md overflow-y-auto p-0">
         <div className="flex flex-col h-full">
           {/* Header */}
-          <div className="px-6 py-4 border-b">
+          <div className="px-4 md:px-6 py-3 md:py-4 border-b">
             <div className="flex items-center justify-between mb-2">
-              <SheetTitle className="text-xl">Cart • {items.length} {items.length === 1 ? 'item' : 'items'}</SheetTitle>
+              <SheetTitle className="text-lg md:text-xl">Cart • {items.length} {items.length === 1 ? 'item' : 'items'}</SheetTitle>
             </div>
             {/* Cart Reservation Timer */}
-            <div className="bg-black text-white text-sm px-3 py-1.5 rounded flex items-center justify-center">
+            <div className="bg-black text-white text-xs md:text-sm px-3 py-1.5 rounded flex items-center justify-center">
               Cart reserved for {formatTime(timeLeft)}
             </div>
           </div>
 
           {/* Free Shipping Progress */}
-          <div className="px-6 py-4 bg-gray-50 border-b">
+          <div className="px-4 md:px-6 py-3 md:py-4 bg-gray-50 border-b">
             <div className="flex items-center gap-2 mb-2">
               <Globe className="h-4 w-4 text-gray-600" />
               <span className="text-sm font-semibold text-gray-900">
@@ -106,22 +106,22 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
           </div>
 
           {/* Cart Items */}
-          <div className="flex-1 overflow-y-auto px-6 py-4">
+          <div className="flex-1 overflow-y-auto px-4 md:px-6 py-3 md:py-4">
             <div className="space-y-4">
               {items.map((item) => (
-                <div key={item.id} className="flex gap-4 pb-4 border-b">
+                <div key={item.id} className="flex gap-3 md:gap-4 pb-4 border-b">
                   {/* Product Image */}
                   <div className="flex-shrink-0">
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-20 h-20 rounded object-cover"
+                      className="w-16 h-16 md:w-20 md:h-20 rounded object-cover"
                     />
                   </div>
 
                   {/* Product Info */}
                   <div className="flex-1 min-w-0">
-                    <h3 className="text-sm font-medium text-gray-900 line-clamp-2 mb-1">
+                    <h3 className="text-xs md:text-sm font-medium text-gray-900 line-clamp-2 mb-1">
                       {item.name}
                     </h3>
                     {item.selectedStyle && (
@@ -211,12 +211,12 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
           </div>
 
           {/* Shipping Protection */}
-          <div className="px-6 py-4 border-t border-b bg-gray-50">
-            <div className="flex items-start justify-between">
-              <div className="flex items-start gap-3 flex-1">
-                <Truck className="h-5 w-5 text-gray-600 mt-0.5" />
-                <div>
-                  <h4 className="text-sm font-semibold text-gray-900 mb-1">
+          <div className="px-4 md:px-6 py-3 md:py-4 border-t border-b bg-gray-50">
+            <div className="flex items-start justify-between gap-3">
+              <div className="flex items-start gap-2 md:gap-3 flex-1 min-w-0">
+                <Truck className="h-4 w-4 md:h-5 md:w-5 text-gray-600 mt-0.5 flex-shrink-0" />
+                <div className="min-w-0">
+                  <h4 className="text-xs md:text-sm font-semibold text-gray-900 mb-1">
                     Shipping Protection
                   </h4>
                   <p className="text-xs text-gray-600">
@@ -224,8 +224,8 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-semibold text-gray-900">$3.99</span>
+              <div className="flex items-center gap-2 flex-shrink-0">
+                <span className="text-xs md:text-sm font-semibold text-gray-900">$3.99</span>
                 <button
                   onClick={() => setShippingProtection(!shippingProtection)}
                   className={`w-10 h-6 rounded-full relative transition-colors ${
@@ -243,7 +243,7 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
           </div>
 
           {/* Order Summary */}
-          <div className="px-6 py-4 border-b bg-white">
+          <div className="px-4 md:px-6 py-3 md:py-4 border-b bg-white">
             <div className="space-y-2">
               {savings > 0 && (
                 <div className="flex justify-between text-sm">
@@ -277,13 +277,13 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
           </div>
 
           {/* Payment Buttons */}
-          <div className="px-6 py-4 bg-white space-y-3">
+          <div className="px-4 md:px-6 py-4 bg-white space-y-3">
             <Button
               onClick={() => {
                 router.push('/checkout?payment=paypal');
                 onOpenChange(false);
               }}
-              className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-6 flex items-center justify-center gap-2"
+              className="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold py-4 md:py-6 flex items-center justify-center gap-2 text-sm md:text-base"
             >
               <span>Pay with PayPal</span>
             </Button>
@@ -292,7 +292,7 @@ export function CartSheet({ open, onOpenChange }: CartSheetProps) {
                 router.push('/checkout?payment=card');
                 onOpenChange(false);
               }}
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-6"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 md:py-6 text-sm md:text-base"
             >
               Pay with Visa
             </Button>
